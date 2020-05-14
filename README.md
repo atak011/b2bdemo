@@ -21,5 +21,6 @@ Sistemin kolay kurulup kullanılması için sqlite kullanılmıştır.Sqllite ti
 shippingDate parametresi string olarak tutulmuştur.Production DB de bu sorun düzeltilecektir.
 
 
+# POSTMAN COLLECTİON ANA DİZİNDE BULUNMAKTADIR
 
 
