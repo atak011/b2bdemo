@@ -1,0 +1,206 @@
+{
+	"info": {
+		"_postman_id": "c583ec86-b877-4e79-a3dc-ce564953c4e9",
+		"name": "B2BDemo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Login İşlemleri",
+			"item": [
+				{
+					"name": "Token Alma",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"username\":\"client1@b2b.com\",\n\t\"password\": \"1234\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/login_check",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"login_check"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		},
+		{
+			"name": "Sipariş İşlemleri",
+			"item": [
+				{
+					"name": "Tüm Sipariş Listesini Alma",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1ODk0ODQwODQsImV4cCI6MTU4OTQ4NzY4NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiY2xpZW50MUBiMmIuY29tIn0.zWm89AyB27v6tdc3wPMLFRFs7xn8J-XIdTvNR4POFIE9WySq1LizShxw_mrn90FtlTFsFsJd7LS2kLFGbmEldfZJz0m6Nwf-51YuEVPo4-HFXekwLKJpuxzaFegYrr-MfFp7mqwjGKJysCAHvXXmqVu3HaTEg7pYqjP0xCDQIDTSFj5Cd2fuqHV70hfb8Q5r5wRIRpQyYJXPCBLnTF6wMtQuSQvz1pkUKOhQ--H3zS-9bMnxI-BISJHuUoQARE6qVyiS445KwqsyrtQ3iS26QQeS_EAYKAh2azII_fkI0OCHl_01mA8-G3Hmds8EHMVcelTeVNyZU_KyUSNC3BNgWm4xVmS6r80TWj62-6fvRNYWQWUvNsTRUgi-XcXNaQlZ9ErWvb4GNtyIay0GG1OMauVHXIIL9kEVMzumJCT7FOmaHVWzcy6qXhgBHpuNN15tNorbDxAiJRX-4tOiBbE2OmjSn8_vZ2JM9uQhTzWDOdxuGDkh3gV2RwDF9izt-zZCB_k0LJgteP09f_g4CIVHl3jhs7cDa5V7Xt_S9dks7elEy15int9i6JexcpGq3x_4Chxco-BtweuRa9zk-mjvebw3F3uFU18UWMr8FSi9gL6wf6Pqy2sa9-HfaPBJzjR_uab8Dwov6AOCRaLMjA4f9x3gKpOqOd3oJIQ5A5AI6-U",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"sen\":121\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "Bu metod sistemdeki tüm siparişleri çekmenizi sağlar"
+					},
+					"response": []
+				},
+				{
+					"name": "Sipariş Oluşturma",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1ODk0ODQwODQsImV4cCI6MTU4OTQ4NzY4NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiY2xpZW50MUBiMmIuY29tIn0.zWm89AyB27v6tdc3wPMLFRFs7xn8J-XIdTvNR4POFIE9WySq1LizShxw_mrn90FtlTFsFsJd7LS2kLFGbmEldfZJz0m6Nwf-51YuEVPo4-HFXekwLKJpuxzaFegYrr-MfFp7mqwjGKJysCAHvXXmqVu3HaTEg7pYqjP0xCDQIDTSFj5Cd2fuqHV70hfb8Q5r5wRIRpQyYJXPCBLnTF6wMtQuSQvz1pkUKOhQ--H3zS-9bMnxI-BISJHuUoQARE6qVyiS445KwqsyrtQ3iS26QQeS_EAYKAh2azII_fkI0OCHl_01mA8-G3Hmds8EHMVcelTeVNyZU_KyUSNC3BNgWm4xVmS6r80TWj62-6fvRNYWQWUvNsTRUgi-XcXNaQlZ9ErWvb4GNtyIay0GG1OMauVHXIIL9kEVMzumJCT7FOmaHVWzcy6qXhgBHpuNN15tNorbDxAiJRX-4tOiBbE2OmjSn8_vZ2JM9uQhTzWDOdxuGDkh3gV2RwDF9izt-zZCB_k0LJgteP09f_g4CIVHl3jhs7cDa5V7Xt_S9dks7elEy15int9i6JexcpGq3x_4Chxco-BtweuRa9zk-mjvebw3F3uFU18UWMr8FSi9gL6wf6Pqy2sa9-HfaPBJzjR_uab8Dwov6AOCRaLMjA4f9x3gKpOqOd3oJIQ5A5AI6-U"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address\": \"Adana Huzurevleri\",\n\t\"productId\": 1,\n\t\"quantity\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "Bu metod sistemdeki tüm siparişleri çekmenizi sağlar\r\n\r\nAlacağı Parametreler \r\n\r\naddress ( String )\r\nproductId ( Integer )\r\nquantity ( Integer )"
+					},
+					"response": []
+				},
+				{
+					"name": "Sipariş Güncelleme",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1ODk0ODQwODQsImV4cCI6MTU4OTQ4NzY4NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiY2xpZW50MUBiMmIuY29tIn0.zWm89AyB27v6tdc3wPMLFRFs7xn8J-XIdTvNR4POFIE9WySq1LizShxw_mrn90FtlTFsFsJd7LS2kLFGbmEldfZJz0m6Nwf-51YuEVPo4-HFXekwLKJpuxzaFegYrr-MfFp7mqwjGKJysCAHvXXmqVu3HaTEg7pYqjP0xCDQIDTSFj5Cd2fuqHV70hfb8Q5r5wRIRpQyYJXPCBLnTF6wMtQuSQvz1pkUKOhQ--H3zS-9bMnxI-BISJHuUoQARE6qVyiS445KwqsyrtQ3iS26QQeS_EAYKAh2azII_fkI0OCHl_01mA8-G3Hmds8EHMVcelTeVNyZU_KyUSNC3BNgWm4xVmS6r80TWj62-6fvRNYWQWUvNsTRUgi-XcXNaQlZ9ErWvb4GNtyIay0GG1OMauVHXIIL9kEVMzumJCT7FOmaHVWzcy6qXhgBHpuNN15tNorbDxAiJRX-4tOiBbE2OmjSn8_vZ2JM9uQhTzWDOdxuGDkh3gV2RwDF9izt-zZCB_k0LJgteP09f_g4CIVHl3jhs7cDa5V7Xt_S9dks7elEy15int9i6JexcpGq3x_4Chxco-BtweuRa9zk-mjvebw3F3uFU18UWMr8FSi9gL6wf6Pqy2sa9-HfaPBJzjR_uab8Dwov6AOCRaLMjA4f9x3gKpOqOd3oJIQ5A5AI6-U"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"address\": \"Adana Huzurevleri\",\n\t\"productId\": 1,\n\t\"quantity\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						},
+						"description": "Bu metod sistemdeki varolan siparişi güncellemenizi sağlar\r\n\r\nAlacağı Parametreler \r\n\r\naddress ( String )\r\nproductId ( Integer )\r\nquantity ( Integer )"
+					},
+					"response": []
+				},
+				{
+					"name": "Sipariş Detayını Görüntüleme",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"type": "text",
+								"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE1ODk0ODQwODQsImV4cCI6MTU4OTQ4NzY4NCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiY2xpZW50MUBiMmIuY29tIn0.zWm89AyB27v6tdc3wPMLFRFs7xn8J-XIdTvNR4POFIE9WySq1LizShxw_mrn90FtlTFsFsJd7LS2kLFGbmEldfZJz0m6Nwf-51YuEVPo4-HFXekwLKJpuxzaFegYrr-MfFp7mqwjGKJysCAHvXXmqVu3HaTEg7pYqjP0xCDQIDTSFj5Cd2fuqHV70hfb8Q5r5wRIRpQyYJXPCBLnTF6wMtQuSQvz1pkUKOhQ--H3zS-9bMnxI-BISJHuUoQARE6qVyiS445KwqsyrtQ3iS26QQeS_EAYKAh2azII_fkI0OCHl_01mA8-G3Hmds8EHMVcelTeVNyZU_KyUSNC3BNgWm4xVmS6r80TWj62-6fvRNYWQWUvNsTRUgi-XcXNaQlZ9ErWvb4GNtyIay0GG1OMauVHXIIL9kEVMzumJCT7FOmaHVWzcy6qXhgBHpuNN15tNorbDxAiJRX-4tOiBbE2OmjSn8_vZ2JM9uQhTzWDOdxuGDkh3gV2RwDF9izt-zZCB_k0LJgteP09f_g4CIVHl3jhs7cDa5V7Xt_S9dks7elEy15int9i6JexcpGq3x_4Chxco-BtweuRa9zk-mjvebw3F3uFU18UWMr8FSi9gL6wf6Pqy2sa9-HfaPBJzjR_uab8Dwov6AOCRaLMjA4f9x3gKpOqOd3oJIQ5A5AI6-U"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost/api/orders/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"path": [
+								"api",
+								"orders",
+								"1"
+							]
+						},
+						"description": "Bu metod sistemdeki siparişi detayı çekmenizi sağlar\r\n\r\nAlacağı Parametreler \r\n\r\nRoute Parametresi Alır\r\nid (Integer)"
+					},
+					"response": []
+				}
+			],
+			"protocolProfileBehavior": {}
+		}
+	],
+	"protocolProfileBehavior": {}
+}
